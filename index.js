@@ -1,15 +1,31 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
+const USERNAME = 'user001';
+const PASSWORD = 'password';
 
 function isAuth(req, res, next) {
-    const auth = req.headers.authorization;
-    if (auth === 'password') {
-      next();
-    } else {
-      res.status(401);
-      res.send('Access forbidden');
+    // const auth = req.headers.authorization;
+    // if (auth === 'password') {
+    //   next();
+    // } else {
+    //   res.status(401);
+    //   res.send('Access forbidden');
+    // }
+
+    if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
+        return res.status(401).json({ message: 'Missing Authorization Header' });
     }
+
+    const base64Credentials =  req.headers.authorization.split(' ')[1];
+    const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
+    const [username, password] = credentials.split(':');
+    
+    if (username === USERNAME && password === PASSWORD) {
+        next();
+    } 
+
+    res.status(401).json({response: 'Access Forbidden, NEGATIVE'});
 }
 
 app.get('/', (req, res) => {
