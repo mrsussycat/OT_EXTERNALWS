@@ -25,5 +25,5 @@ app.get('/secret', isAuth, (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`Server listening on port ${PORT}`);
 })
