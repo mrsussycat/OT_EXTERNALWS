@@ -12,7 +12,7 @@ function isAuth(req, res, next) {
     }
 }
 
-app.get('/getData', (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).json({response: 'POSITIVE'});
 })
 
