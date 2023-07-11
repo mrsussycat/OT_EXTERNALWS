@@ -1,18 +1,29 @@
-// Import http library
-const http = require("http")
-// use env variable to define tcp/ip port with a default
+const express = require('express');
+const app = express();
 const PORT = process.env.PORT || 8080
-//create our server object
-const server = http.createServer()
-// We define a function that runs in response a request event
-server.on("request", (request, response) => {
-  // handle request based on method then URL
-  response.statusCode = 200
-  response.write("Hello World")
-  response.end()
+
+function isAuth(req, res, next) {
+    const auth = req.headers.authorization;
+    if (auth === 'password') {
+      next();
+    } else {
+      res.status(401);
+      res.send('Access forbidden');
+    }
+}
+
+app.get('/getData', (req, res) => {
+    res.status(200).json({response: 'POSITIVE'});
 })
-// get the server to start listening
-server.listen(PORT, err => {
-  // error checking
-  err ? console.error(err) : console.log(`listening on port ${PORT}`)
+
+app.get('/get408', (req, res) => {
+  res.status(408).json({response: 'CODE - 408, POSITIVE'});
+})
+
+app.get('/secret', isAuth, (req, res) => {
+    res.status(200).json({response: 'AUTH SUCCESSFUL, POSITIVE'});
+})
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${port}`);
 })
