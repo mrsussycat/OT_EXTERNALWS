@@ -40,6 +40,10 @@ app.get('/secret', isAuth, (req, res) => {
     res.status(200).json({response: 'AUTH SUCCESSFUL, POSITIVE'});
 })
 
+app.get('/getJson', (req, res) => {
+    res.json({response: 'POSITIVE'});
+})
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 })
