@@ -32,8 +32,8 @@ app.get('/', (req, res) => {
     res.status(200).json({response: 'POSITIVE'});
 })
 
-app.get('/get408', (req, res) => {
-  res.status(408).json({response: 'CODE - 408, POSITIVE'});
+app.get('/get400', (req, res) => {
+  res.status(400).json({response: 'CODE - 400, POSITIVE'});
 })
 
 app.get('/secret', isAuth, (req, res) => {
