@@ -28,7 +28,7 @@ function isAuth(req, res, next) {
     res.status(401).json({response: 'Access Forbidden, NEGATIVE'});
 }
 
-app.patch('/', (req res) => {
+app.patch('/', (req, res) => {
     res.status(200).json({response: 'POSITIVE'});
 })
 
