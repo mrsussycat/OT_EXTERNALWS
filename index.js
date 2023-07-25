@@ -18,9 +18,10 @@ function isAuth(req, res, next) {
     res.status(401).json({response: 'Access Forbidden, NEGATIVE'});
 }
 
-
 app.get('/', (req, res) => {
-    res.status(200).json({response: 'GET POSITIVE'});
+    setTimeout(() => {
+        res.status(200).json({response: 'GET POSITIVE'});
+    }, 10000)
 })
 
 app.post('/', (req, res) => {
