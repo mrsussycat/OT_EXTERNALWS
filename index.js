@@ -42,6 +42,7 @@ app.get('/get408', (req, res) => {
 })
 
 app.get('/secret', isAuth, (req, res) => {
+    console.log('Request Headers:', req.headers);
     res.status(200).json({response: 'AUTH SUCCESSFUL, POSITIVE'});
 })
 
