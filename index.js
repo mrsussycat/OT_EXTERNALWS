@@ -25,6 +25,10 @@ app.get('/:timeoutValue', (req, res) => {
     }, timeoutValue * 1000)
 })
 
+app.get('/', (req, res) => {
+    res.status(200).json({response: 'GET POSITIVE'});
+})
+
 app.post('/', (req, res) => {
     res.status(200).json({response: 'POST POSITIVE'});
 })
