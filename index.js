@@ -6,6 +6,7 @@ const PASSWORD = 'password';
 
 function isAuth(req, res, next) {
     if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
+        res.set("WWW-Authenticate", 'Basic realm="Fake Realm"');
         return res.status(401).json({ message: 'Missing Authorization Header' });
     }
 
