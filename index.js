@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const USERNAME = 'user001';
 const PASSWORD = 'password';
+app.use(express.json());
 
 function isAuth(req, res, next) {
     if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
+    console.log("Request Body: " + req.body);
     res.status(200).json({response: 'POST POSITIVE'});
 })
 
