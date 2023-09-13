@@ -20,12 +20,12 @@ function isAuth(req, res, next) {
     res.status(401).json({response: 'Access Forbidden, NEGATIVE'});
 }
 
-app.get('/:timeoutValue', (req, res) => {
-    const timeoutValue = parseInt(req.params.timeoutValue, 10);
-    setTimeout(() => {
-        res.status(200).json({response: 'GET POSITIVE'});
-    }, timeoutValue * 1000)
-})
+// app.get('/:timeoutValue', (req, res) => {
+//     const timeoutValue = parseInt(req.params.timeoutValue, 10);
+//     setTimeout(() => {
+//         res.status(200).json({response: 'GET POSITIVE'});
+//     }, timeoutValue * 1000)
+// })
 
 app.get('/', (req, res) => {
     res.status(200).json({response: 'GET POSITIVE'});
