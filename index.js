@@ -31,11 +31,11 @@ app.get('/', (req, res) => {
     res.status(200).json({response: 'GET POSITIVE'});
 })
 
-app.get('/system', (req, res) => {
+app.get('/system', isAuth, (req, res) => {
     res.status(200).json({fromOrganization: 'system'});
 })
 
-app.get('/ruthwik', (req, res) => {
+app.get('/ruthwik', isAuth, (req, res) => {
     res.status(200).json({fromOrganization: 'ruthwik'});
 })
 
