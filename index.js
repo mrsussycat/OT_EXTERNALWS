@@ -31,6 +31,14 @@ app.get('/', (req, res) => {
     res.status(200).json({response: 'GET POSITIVE'});
 })
 
+app.get('/system', (req, res) => {
+    res.status(200).json({fromOrganization: 'system'});
+})
+
+app.get('/ruthwik, (req, res) => {
+    res.status(200).json({fromOrganization: 'ruthwik'});
+})
+
 app.post('/', (req, res) => {
     console.log("Request Body: " + JSON.stringify(req.body));
     res.status(200).json({response: 'POST POSITIVE'});
