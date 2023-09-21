@@ -35,7 +35,7 @@ app.get('/system', (req, res) => {
     res.status(200).json({fromOrganization: 'system'});
 })
 
-app.get('/ruthwik, (req, res) => {
+app.get('/ruthwik', (req, res) => {
     res.status(200).json({fromOrganization: 'ruthwik'});
 })
 
