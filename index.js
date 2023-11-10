@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 })
 
 app.delete('/', (req, res) => {
-    res.status(200).json({fromOrganization: 'DELETE POSITIVE'});
+    res.status(200).json({response: 'DELETE POSITIVE'});
 })
 
 app.post('/', (req, res) => {
