@@ -31,16 +31,11 @@ app.get('/', (req, res) => {
     res.status(200).json({response: 'GET POSITIVE'});
 })
 
-app.get('/system', isAuth, (req, res) => {
-    res.status(200).json({fromOrganization: 'system'});
-})
-
-app.get('/ruthwik', isAuth, (req, res) => {
-    res.status(200).json({fromOrganization: 'ruthwik'});
+app.delete('/', (req, res) => {
+    res.status(200).json({fromOrganization: 'DELETE POSITIVE'});
 })
 
 app.post('/', (req, res) => {
-    console.log("Request Body: " + JSON.stringify(req.body));
     res.status(200).json({response: 'POST POSITIVE'});
 })
 
