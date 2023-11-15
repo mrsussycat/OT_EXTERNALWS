@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/hello/world/one/hyderabad/india', (req, res) => {
-    res.status(200).json({response: 'GET POSITIVE'});
+    res.status(200).json({response: req.body});
 })
 
 app.delete('/', (req, res) => {
