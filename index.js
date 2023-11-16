@@ -40,7 +40,7 @@ app.get('/hello%20world', (req, res) => {
 })
 
 app.get('/downstream/touchstone-test/authenticate​/api/Route/ProcessRequest', (req, res) => {
-    res.status(200).json({response: "/hello%20world"});
+    res.status(200).json({response: "/downstream/touchstone-test/authenticate​/api/Route/ProcessRequest"});
 })
 
 app.get('/hyderabad india', (req, res) => {
