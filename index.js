@@ -39,6 +39,10 @@ app.get('/hello%20world', (req, res) => {
     res.status(200).json({response: req.body});
 })
 
+app.get('/hyderabad india', (req, res) => {
+    res.status(200).json({response: req.body});
+})
+
 app.delete('/', (req, res) => {
     res.status(200).json({response: 'DELETE POSITIVE'});
 })
