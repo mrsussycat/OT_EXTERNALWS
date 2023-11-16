@@ -32,15 +32,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/hello/world/one/hyderabad/india', (req, res) => {
-    res.status(200).json({response: req.body});
+    res.status(200).json({response: "/hello/world/one/hyderabad/india"});
 })
 
 app.get('/hello%20world', (req, res) => {
-    res.status(200).json({response: req.body});
+    res.status(200).json({response: "/hello%20world"});
 })
 
 app.get('/hyderabad india', (req, res) => {
-    res.status(200).json({response: req.body});
+    res.status(200).json({response: "/hyderabad india"});
 })
 
 app.delete('/', (req, res) => {
