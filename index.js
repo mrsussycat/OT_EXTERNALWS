@@ -39,6 +39,10 @@ app.get('/hello%20world', (req, res) => {
     res.status(200).json({response: "/hello%20world"});
 })
 
+app.get('/downstream/touchstone-test/authenticate​/api/Route/ProcessRequest', (req, res) => {
+    res.status(200).json({response: "/hello%20world"});
+})
+
 app.get('/hyderabad india', (req, res) => {
     res.status(200).json({response: "/hyderabad india"});
 })
