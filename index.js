@@ -59,6 +59,10 @@ app.patch('/', (req, res) => {
     res.status(200).json({response: 'PATCH POSITIVE'});
 })
 
+app.get('/system', (req, res) => {
+    res.status(200).json({response: 'GET POSITIVE'});
+})
+
 app.get('/get408', (req, res) => {
   res.status(408).json({response: 'CODE - 408, POSITIVE'});
 })
