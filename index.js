@@ -27,6 +27,10 @@ function isAuth(req, res, next) {
 //     }, timeoutValue * 1000)
 // })
 
+app.get('/system', (req, res) => {
+    res.status(200).json({response: 'GET POSITIVE'});
+})
+
 app.get('/', (req, res) => {
     res.status(200).json({response: 'GET POSITIVE'});
 })
@@ -57,10 +61,6 @@ app.post('/', (req, res) => {
 
 app.patch('/', (req, res) => {
     res.status(200).json({response: 'PATCH POSITIVE'});
-})
-
-app.get('/system', (req, res) => {
-    res.status(200).json({response: 'GET POSITIVE'});
 })
 
 app.get('/get408', (req, res) => {
