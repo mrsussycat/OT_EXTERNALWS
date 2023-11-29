@@ -15,7 +15,11 @@ function isAuth(req, res, next) {
     const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
     const [username, password] = credentials.split(':');
     if (username === USERNAME && password === PASSWORD) {
-        next();
+        if (req.headers.otdsticket && req.headers.otdsticket === 'HELLO WORLD') {
+            next();
+        } else {
+            res.status(401).json({ response: 'Invalid OTDSTicket Header' });
+        }
     } 
     res.status(401).json({response: 'Access Forbidden, NEGATIVE'});
 }
