@@ -68,7 +68,7 @@ app.patch('/', (req, res) => {
 })
 
 app.get('/get408', (req, res) => {
-  res.status(408).json({response: 'CODE - 408, POSITIVE'});
+  res.status(408).json({'@response': 'CODE - 408, POSITIVE'});
 })
 
 app.put('/secret', isAuth, (req, res) => {
