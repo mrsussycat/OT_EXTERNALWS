@@ -6,7 +6,7 @@ app.get('/:timeout', (req, res) => {
     setTimeout(() => {
         res.json({"response": "Delayed response after " + timeout + " seconds"});
     }, timeout * 1000);
-}
+});
 
 app.get('/message', (req, res) => {
     res.json({"response": "Get OK"});
