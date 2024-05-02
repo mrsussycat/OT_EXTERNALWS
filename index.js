@@ -1,6 +1,13 @@
 const express = require('express');
 const app = express();
 
+app.get('/:timeout', (req, res) => {
+    const timeout = parseInt(req.params.timeout); // Parse the timeout parameter to an integer
+    setTimeout(() => {
+        res.json({"response": "Delayed response after " + timeout + " seconds"});
+    }, timeout * 1000);
+}
+
 app.get('/message', (req, res) => {
     res.json({"response": "Get OK"});
 });
@@ -16,7 +23,6 @@ app.post('/message', (req, res) => {
 app.delete('/message', (req, res) => {
     res.json({"response": "Delete OK"});
 });
-
 
 const port = process.env.PORT || 3000;
 
