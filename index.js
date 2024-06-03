@@ -24,6 +24,10 @@ app.delete('/message', (req, res) => {
     res.json({"response": "Delete OK"});
 });
 
+app.get('/string', (req, res) => {
+    res.send("hello world");
+});
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
