@@ -22,7 +22,8 @@ app.get('/string', (req, res) => {
 });
 
 app.post('/string', (req, res) => {
-    res.send("hello world POST");
+    res.set('Content-Type', 'application/xml');
+    res.send('<response><message>hello world POST</message></response>');
 });
 
 app.get('/:timeout', (req, res) => {
