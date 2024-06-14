@@ -18,7 +18,11 @@ app.delete('/message', (req, res) => {
 });
 
 app.get('/string', (req, res) => {
-    res.send("hello world");
+    res.send("hello world GET");
+});
+
+app.post('/string', (req, res) => {
+    res.send("hello world POST");
 });
 
 app.get('/:timeout', (req, res) => {
